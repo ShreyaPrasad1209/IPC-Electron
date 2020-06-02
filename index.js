@@ -1,5 +1,6 @@
-const { ipcRenderer } = require('electron');
-
+const { ipcRenderer } = window.require('electron');
+const fs = require('fs')
+const path = require('path')
 
 const asyncBtn = document.getElementById('asyncBtn');
 const syncBtn = document.getElementById('syncBtn');
@@ -8,7 +9,7 @@ asyncBtn.addEventListener('click', function () {
   ipcRenderer.send('async-message');
   console.log('async msg 2');
 });
-ipcRendererRenderer.on('async-message-reply', function (event, arg) {
+ipcRenderer.on('async-message-reply', function (event, arg) {
   const message = `Message reply: ${arg}`;
   console.log(message);
 });
@@ -18,3 +19,6 @@ syncBtn.addEventListener('click', function () {
   console.log(reply);
   console.log('sync msg 2');
 });
+
+delete process.env.ELECTRON_ENABLE_SECURITY_WARNINGS;
+process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = true;

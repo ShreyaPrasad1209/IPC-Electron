@@ -5,9 +5,7 @@
   "private": true,
   "main": "main.js",
   "dependencies": {
-    "browserify": "^16.5.1",
-    "electron": "^9.0.0",
-    "webpack": "^4.43.0"
+    "electron": "^9.0.0"
   },
   "devDependencies": {},
   "scripts": {
